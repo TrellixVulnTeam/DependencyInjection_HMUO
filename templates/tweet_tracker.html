@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block page_title %}Welcome{% endblock %}
+{% block body %}
+    {{ super() }}
+
+ <ul class="nav nav-pills nav-stacked">
+            <li id="get_db_nav"><a href="/tweet_tracker/get_db">Get DB</a></li>
+     <li id="set_db_nav"><a href="/tweet_tracker/set_db">Set DB</a></li>
+
+ </ul>
+
+    <p>
+        This is a minimal web app for Tweet Tracker
+    </p>
+{% endblock %}
