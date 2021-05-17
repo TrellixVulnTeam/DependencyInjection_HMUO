@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b14e5f4b-3d75-4973-9bbe-421f51afb3f4" name="DependencyInjection">
+        <fileTransfer rootFolder="/home/local/ASUAD/ujeong1" accessType="SFTP" host="129.219.60.4" port="22" sshConfigId="59cf6349-2f4b-42a2-a73d-766cfbe19fef" sshConfig="ujeong1@129.219.60.4:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

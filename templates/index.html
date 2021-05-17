@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block page_title %}Welcome to Sample Page{% endblock %}
+{% block body %}
+    {{ super() }}
+
+    <p>
+        This is a minimal web app for testing dependency injection.<br>
+        You can inject your modules to (1) MyService.py for implementation <br>
+        and (2) view.py for making page, and see what you return like below
+    </p>
+    <p>
+        <ul>
+            <li>DB Object returned by module is {{db_connection}}</li>
+            <li>Table names defined in DB is {{table_names}}</li>
+        </ul>
+    </p>
+{% endblock %}

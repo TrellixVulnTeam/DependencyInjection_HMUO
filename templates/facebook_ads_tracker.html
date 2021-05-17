@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block page_title %}Welcome to Facebook Ads Tracker{% endblock %}
+{% block body %}
+    {{ super() }}
+
+    <p>
+        This page is for Ujun's experimentation. Supported functions are like below (Last edited: 05/16/2021)
+    </p>
+
+     <ul class="nav nav-pills nav-stacked">
+         <li id="get_db_nav"><a href="/facebook_ads_tracker/get_db">Get DB</a></li>
+         <li id="set_db_nav"><a href="/facebook_ads_tracker/set_db">Set DB</a></li>
+     </ul>
+{% endblock %}
