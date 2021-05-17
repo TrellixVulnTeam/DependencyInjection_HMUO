@@ -1,0 +1,6 @@
+dependency-injector
+flask
+injector
+bootstrap-flask
+flask_injector
+pymongo

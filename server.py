@@ -1,5 +1,5 @@
 #THIS APP IS THE MAIN PART OF DEPENDENCY INJECTION FOR OTHER MODULES
-from .application import create_app
+from application import create_app
 app = create_app()
 
 #BELOW IS UJUN's EXPERIMENTATION(Another Way of Dependency Injection)

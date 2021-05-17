@@ -20,9 +20,23 @@ class facebook_ads_tracker_service:
     def set_data(self, instance):
         db = self.connection.getDB()
         cursor = db[self.table_name_facebook_job]
+        if instance == None:
+            #just give an instance as defined. 
+            instance = self.query_construct()
+        cursor.insert_one(instance)
+        return "An instance has been inserted in Facebook Ads DB."
 
+    def delete_data(self):
+        db = self.connection.getDB()
+        cursor = db[self.table_name_facebook_ads]
+        cursor.drop()
+        cursor = db[self.table_name_facebook_job]
+        cursor.drop()
+        return "successfully deleted"
+        
+    def query_construct(self):
         query = dict()
-        query["access_token"] = "EAA0CL0ZAUZB5gBALbb2DvZAopZBKS5kM726cgbbuAcLNR4w8ZC9ZCFD0zqEKwQtOGYEx0lKnY93dAXL6rRMniSmRsZBjE0W01qt21gs5tG528fBCTSKbBjyReKrChlObXXEAQ5PwZBs6UwuV0HtTOxCPCyX2bnEhpsDdhp1GQ3R8pOBhlZAZByH175"
+        query["access_token"] = "SOME TOKEN HERE"
         query["action"] = "search"
         query["fields"] = "ad_creative_body, ad_snapshot_url, ad_creation_time, ad_creative_link_title," \
                           "ad_creative_link_description, ad_creative_link_caption, " \
@@ -38,21 +52,4 @@ class facebook_ads_tracker_service:
         query["ad_active_status"] = "ALL"
         query["ad_category"] = "ALL"  # CREDIT_ADS, EMPLOYMENT_ADS, HOUSING_ADS, POLITICAL_AND_ISSUE_ADS, UNCATEGORIZED_ADS
         query["publisher_platforms"] = "FACEBOOK"  # INSTAGRAM, AUDIENCE_NETWORK, MESSENGER, WHATSAPP
-
-        instance = query
-        cursor.insert_one(instance)
-        print("An instance has been set in Facebook Ads DB.")
-
-        jobs = cursor.find()
-        for x in jobs:
-            print(x)
-        return "success"
-
-    def delete_data(self):
-        db = self.connection.getDB()
-        cursor = db[self.table_name_facebook_ads]
-        cursor.drop()
-        cursor = db[self.table_name_facebook_job]
-        cursor.drop()
-
-        return "successfully deleted"
+        return query
