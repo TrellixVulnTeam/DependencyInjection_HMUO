@@ -1,16 +1,19 @@
-from MyContainer import MyContainer
+from .containers import MainContainer
 from flask import Flask
 from flask_bootstrap import Bootstrap
-import views
+from . import views
 
 def create_app():
-    container = MyContainer()
-    # You can give configurations using yml file
-    # container.config.from_yaml('config.yml')
+    container = MainContainer()
 
     app = Flask(__name__)
     app.container = container
+
+    "Main Page"
     app.add_url_rule('/', 'index', views.index)
+
+    "FBADTracker"
+    app.add_url_rule('/facebook_ads_tracker', 'fbad_home', views.fbad_home)
 
     bootstrap = Bootstrap()
     bootstrap.init_app(app)

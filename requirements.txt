@@ -4,3 +4,7 @@ injector
 bootstrap-flask
 flask_injector
 pymongo
+pyyaml
+pytest-flask
+pytest-cov
+
